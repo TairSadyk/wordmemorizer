@@ -1,0 +1,55 @@
+.form-container {
+  @include absCenter;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  &__label {
+    font-size: 2rem;
+    color: $color-dark-grey-2;
+    cursor: pointer;
+  }
+  &__link-wrap {
+    & {
+      display: flex;
+      gap: 2.4rem;
+      align-items: center;
+      color: $color-dark-grey-1;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+  &__icon {
+    color: #34b3f1;
+    font-size: 6.4rem;
+    --ionicon-stroke-width: 18px;
+    border: 1.5px solid #34b3f1;
+    padding: 1.2rem;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+  }
+  &__input {
+    display: none;
+    color: $color-dark-grey-2;
+  }
+  &__button {
+    color: $color-light-grey-1;
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: inline-block;
+    border: none;
+    border-radius: 100px;
+    background: linear-gradient(to right, rgba(#f15412, 0.5), #f15412);
+    padding: 1.4rem 2.8rem;
+    cursor: pointer;
+  }
+}

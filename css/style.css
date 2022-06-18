@@ -1,3 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem !important;
+}
 
+.u-margin-bottom-medium {
+  margin-bottom: 3rem !important;
+}
+
+.u-margin-bottom-large {
+  margin-bottom: 5rem !important;
+}
+
+.u-margin-top-medium {
+  margin-top: 3rem !important;
+}
+
+.u-margin-top-large {
+  margin-top: 5rem !important;
+}
+
+.hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  height: 0 !important;
+}
+
+.form-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.form__label {
+  font-size: 2rem;
+  color: #777;
+  cursor: pointer;
+}
+.form__link-wrap {
+  display: flex;
+  gap: 2.4rem;
+  align-items: center;
+  color: #3a3a3a;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.form__link-wrap:active {
+  transform: translateY(2px);
+}
+.form__icon {
+  color: #34b3f1;
+  font-size: 6.4rem;
+  --ionicon-stroke-width: 18px;
+  border: 1.5px solid #34b3f1;
+  padding: 1.2rem;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+}
+.form__input {
+  display: none;
+  color: #777;
+}
+.form__button {
+  color: #e7e7e7;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: inline-block;
+  border: none;
+  border-radius: 100px;
+  background: linear-gradient(to right, rgba(241, 84, 18, 0.5), #f15412);
+  padding: 1.4rem 2.8rem;
+  cursor: pointer;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.primary-heading {
+  font-size: 3.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /* root font size 10px, we use percentages for accesabilty purposes, 
+  since some people increase the font size of their browser */
+  font-size: 62.5%;
+}
+
+body {
+  /* box sizing property not inherited automatically, so we set all selectors to inherit this declared value  */
+  box-sizing: border-box;
+  color: #3a3a3a;
+  background-color: #e7e7e7;
+}
 
 /*# sourceMappingURL=style.css.map */
