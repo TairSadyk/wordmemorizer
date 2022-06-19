@@ -132,11 +132,20 @@
   text-transform: uppercase;
   letter-spacing: 3px;
 }
-.card__icon {
+.card__icon--front {
   color: #777;
   font-size: 3.2rem;
   --ionicon-stroke-width: 12px;
   cursor: pointer;
+}
+.card__icon--back {
+  --ionicon-stroke-width: 12px;
+  color: #e7e7e7;
+  font-size: 3.2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 .card__btn {
   color: white;
@@ -151,10 +160,13 @@
   padding: 1rem 2rem;
   cursor: pointer;
 }
-.card:hover .card__side--front {
+.card__side--front.rotate {
   transform: rotateY(-180deg);
 }
-.card:hover .card__side--back {
+.card__side--back {
+  text-align: center;
+}
+.card__side--back.rotate {
   transform: rotateY(0deg);
 }
 
