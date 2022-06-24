@@ -1,0 +1,138 @@
+.cards-article {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  &__btn {
+    position: absolute;
+    right: 25%;
+    padding: 1.5rem;
+    color: #e7e7e7;
+    font-size: 1.6rem;
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+    border: none;
+    border-radius: 5rem;
+    cursor: pointer;
+    box-shadow: 0 1rem 3rem rgba(black, 0.15);
+    transition: all 0.3s ease;
+    line-height: 0;
+
+    &:active {
+      transform: translateY(3px);
+    }
+    &--next {
+      bottom: -45%;
+      background: #8bbabb;
+      &:hover {
+        background-color: #6f9596;
+      }
+    }
+    &--cancel {
+      bottom: -20%;
+      background: #3a3a3a;
+      &:hover {
+        background-color: #3a3a3abd;
+      }
+    }
+  }
+
+  .card {
+    perspective: 200rem;
+    position: relative;
+    height: 20rem;
+    margin: 10rem auto 0;
+    width: 30%;
+
+    &__side {
+      height: 51rem;
+      width: 100%;
+      position: absolute;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      transform-style: preserve-3d;
+      font-weight: 400;
+      font-size: 2rem;
+      border-radius: 1.2rem;
+      box-shadow: 0 1.2rem 4rem rgba(black, 0.15);
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      transition: all 0.8s ease;
+
+      &--front {
+        color: $color-light-grey-1;
+        background: linear-gradient(145deg, #1e1e1e, #232323);
+        box-shadow: 10px 10px 29px #161616, -10px -10px 29px #2c2c2c;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+      &--back {
+        color: $color-light-grey-1;
+        background: linear-gradient(to right bottom, #34b3f1, #103648);
+        // background: linear-gradient(105deg, rgba(#f15412, 0.5), #f15512cb);
+        transform: rotateY(180deg);
+      }
+    }
+    &__text {
+      font-size: 2.4rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+    &__icon--front {
+      color: $color-light-grey-1;
+      font-size: 3.2rem;
+      --ionicon-stroke-width: 12px;
+      cursor: pointer;
+    }
+    &__icon--back {
+      --ionicon-stroke-width: 12px;
+      color: $color-light-grey-1;
+      font-size: 3.2rem;
+      cursor: pointer;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+    &__btn {
+      color: white;
+      font-size: 1.4rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      display: inline-block;
+      border: none;
+      border-radius: 100px;
+      background: linear-gradient(105deg, rgba(#f15412, 0.5), #f15412);
+      padding: 1rem 2rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      &:hover {
+        background: linear-gradient(
+          105deg,
+          rgba(#f15412, 0.5),
+          rgba(241, 85, 18, 0.7)
+        );
+      }
+      &:active {
+        transform: translateY(2px);
+      }
+    }
+    &__side--front.rotate {
+      transform: rotateY(-180deg);
+    }
+    &__side--back {
+      text-align: center;
+      &.rotate {
+        transform: rotateY(0deg);
+      }
+    }
+  }
+}

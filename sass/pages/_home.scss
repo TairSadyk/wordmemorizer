@@ -9,31 +9,36 @@
   &__label {
     font-size: 2rem;
     color: $color-dark-grey-2;
-    cursor: pointer;
+    // cursor: pointer;
   }
   &__link-wrap {
     & {
       display: flex;
       gap: 2.4rem;
       align-items: center;
-      color: $color-dark-grey-1;
+      color: $color-light-grey-1;
       text-decoration: none;
-      transition: all 0.2s;
+      transition: all 0.3s;
     }
 
-    &:active {
-      transform: translateY(2px);
-    }
+    // &:active {
+    //   transform: translateY(2px);
+    // }
   }
   &__icon {
-    color: #34b3f1;
-    font-size: 6.4rem;
-    --ionicon-stroke-width: 18px;
-    border: 1.5px solid #34b3f1;
+    color: $color-light-grey-1;
+    --ionicon-stroke-width: 20px;
     padding: 1.2rem;
-    height: 4rem;
-    width: 4rem;
+    height: 5rem;
+    width: 5rem;
     border-radius: 50%;
+    background: linear-gradient(145deg, #232323, #1e1e1e);
+    box-shadow: 5px 5px 18px #121212, -5px -5px 18px #303030;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:active {
+      transform: translateY(3px);
+    }
   }
   &__input {
     display: none;
@@ -49,106 +54,7 @@
     border: none;
     border-radius: 100px;
     background: linear-gradient(to right, rgba(#f15412, 0.5), #f15412);
-    padding: 1.4rem 2.8rem;
+    padding: 2rem 3rem;
     cursor: pointer;
-  }
-}
-.cards-article {
-  display: flex;
-  justify-content: center;
-}
-.card {
-  perspective: 200rem;
-  position: relative;
-  height: 20rem;
-  margin: 10rem auto 0;
-  width: 30%;
-
-  &__side {
-    height: 51rem;
-    width: 100%;
-    position: absolute;
-    overflow: hidden;
-    top: 0;
-    left: 0;
-    transform-style: preserve-3d;
-    font-weight: 400;
-    font-size: 2rem;
-    border-radius: 1.2rem;
-    box-shadow: 0 1.2rem 4rem rgba(black, 0.15);
-    padding: 2rem 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    transition: all 0.8s ease;
-
-    &--front {
-      color: $color-dark-grey-1;
-      background-color: white;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-    &--back {
-      color: $color-light-grey-1;
-      background: linear-gradient(to right bottom, #34b3f1, $color-dark-grey-1);
-      transform: rotateY(180deg);
-    }
-  }
-  &__text {
-    font-size: 2.4rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-  }
-  &__icon--front {
-    color: $color-dark-grey-2;
-    font-size: 3.2rem;
-    --ionicon-stroke-width: 12px;
-    cursor: pointer;
-    // border: 1px solid $color-dark-grey-2;
-    // padding: 1.2rem;
-    // height: 3rem;
-    // width: 3rem;
-    // border-radius: 50%;
-  }
-  &__icon--back {
-    --ionicon-stroke-width: 12px;
-    color: $color-light-grey-1;
-    font-size: 3.2rem;
-    cursor: pointer;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-  }
-  &__btn {
-    color: white;
-    font-size: 1.4rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    display: inline-block;
-    border: none;
-    border-radius: 100px;
-    background: linear-gradient(105deg, rgba(#f15412, 0.5), #f15412);
-    padding: 1rem 2rem;
-    cursor: pointer;
-  }
-  // &:hover &__side--front {
-  //   transform: rotateY(-180deg);
-  // }
-  // &:hover &__side--back {
-  //   transform: rotateY(0deg);
-  // }
-  &__side--front.rotate {
-    transform: rotateY(-180deg);
-  }
-  &__side--back {
-    text-align: center;
-    &.rotate {
-      transform: rotateY(0deg);
-    }
   }
 }

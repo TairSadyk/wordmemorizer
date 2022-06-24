@@ -1,0 +1,39 @@
+.shake-animation {
+  animation: card-shake 0.5s !important;
+}
+.slide-out {
+  animation: slide-out 0.7s !important;
+}
+
+@keyframes card-shake {
+  0% {
+    transform: rotate(0);
+  }
+  20% {
+    transform: rotate(4deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  60% {
+    transform: rotate(4deg);
+  }
+  80% {
+    transform: rotate(-4deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(200%);
+  }
+}
