@@ -15,10 +15,15 @@ const formBtn = document.querySelector('.card__btn');
 const nextBtn = document.querySelector('.cards-article__btn--next');
 const cancelBtn = document.querySelector('.cards-article__btn--cancel');
 let dataArr;
+let randNum;
 let speech = new SpeechSynthesisUtterance();
-const genRanNum = () => Math.floor(Math.random() * 20);
+const genRanNum = l => Math.floor(Math.random() * l);
 const showWord = () => {
-  const randNum = genRanNum();
+  if (dataArr.length === 0) {
+    alert('You remembered all new words!!!');
+    return;
+  }
+  randNum = genRanNum(dataArr.length);
   const engWord = dataArr[randNum][0];
   cardTextFront.innerText = engWord;
   speech.text = engWord;
@@ -61,8 +66,15 @@ nextBtn.addEventListener('click', function () {
 });
 
 cancelBtn.addEventListener('click', function () {
+  // dataArr.splice(index, 1);
+  // console.log(index, dataArr);
+  console.log(dataArr, randNum);
+  if (dataArr.length > 0) {
+    dataArr.splice(randNum, 1);
+  }
   card.classList.add('shake-animation');
   setTimeout(() => {
     card.classList.remove('shake-animation');
-  }, 550);
+    showWord();
+  }, 500);
 });

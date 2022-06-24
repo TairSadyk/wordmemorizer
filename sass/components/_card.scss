@@ -15,7 +15,7 @@
     border: none;
     border-radius: 5rem;
     cursor: pointer;
-    box-shadow: 0 1rem 3rem rgba(black, 0.15);
+    // box-shadow: 0 1rem 3rem rgba(black, 0.15);
     transition: all 0.3s ease;
     line-height: 0;
 
@@ -31,7 +31,8 @@
     }
     &--cancel {
       bottom: -20%;
-      background: #3a3a3a;
+      background: linear-gradient(145deg, #2c3034, #34393e);
+      box-shadow: 17px 17px 27px #292c30, -17px -17px 27px #393e44;
       &:hover {
         background-color: #3a3a3abd;
       }
@@ -56,6 +57,7 @@
       font-weight: 400;
       font-size: 2rem;
       border-radius: 1.2rem;
+      // border: 1px solid #5a5d61;
       box-shadow: 0 1.2rem 4rem rgba(black, 0.15);
       padding: 2rem 4rem;
       display: flex;
@@ -67,8 +69,8 @@
 
       &--front {
         color: $color-light-grey-1;
-        background: linear-gradient(145deg, #1e1e1e, #232323);
-        box-shadow: 10px 10px 29px #161616, -10px -10px 29px #2c2c2c;
+        background: $color-dark-grey-1;
+        box-shadow: 14px 14px 28px #2d3135, -14px -14px 28px #35393f;
         display: flex;
         flex-direction: column;
         gap: 2rem;
