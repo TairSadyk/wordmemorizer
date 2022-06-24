@@ -24,9 +24,9 @@
     }
     &--next {
       bottom: -45%;
-      background: #8bbabb;
+      background: #296866;
       &:hover {
-        background-color: #6f9596;
+        background: #296866bc;
       }
     }
     &--cancel {
@@ -34,7 +34,7 @@
       background: linear-gradient(145deg, #2c3034, #34393e);
       box-shadow: 17px 17px 27px #292c30, -17px -17px 27px #393e44;
       &:hover {
-        background-color: #3a3a3abd;
+        background: #393e44;
       }
     }
   }
@@ -77,7 +77,10 @@
       }
       &--back {
         color: $color-light-grey-1;
-        background: linear-gradient(to right bottom, #34b3f1, #103648);
+        // background: linear-gradient(to right bottom, #34b3f1, #103648);
+        background: #33393e;
+        box-shadow: inset 10px 10px 25px #262b2f, inset -10px -10px 25px #40474e;
+
         // background: linear-gradient(105deg, rgba(#f15412, 0.5), #f15512cb);
         transform: rotateY(180deg);
       }
@@ -93,6 +96,9 @@
       font-size: 3.2rem;
       --ionicon-stroke-width: 12px;
       cursor: pointer;
+      &:hover {
+        color: #ee5011aa;
+      }
     }
     &__icon--back {
       --ionicon-stroke-width: 12px;
@@ -112,7 +118,8 @@
       display: inline-block;
       border: none;
       border-radius: 100px;
-      background: linear-gradient(105deg, rgba(#f15412, 0.5), #f15412);
+      // background: linear-gradient(105deg, rgba(#f15412, 0.5), #f15412);
+      background: radial-gradient(#ee5011, #c02b09);
       padding: 1rem 2rem;
       transition: all 0.3s ease;
       cursor: pointer;

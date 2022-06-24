@@ -37,6 +37,10 @@
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  padding: 3rem 5rem;
+  box-shadow: inset 5px 5px 20px #1d2023, inset -5px -5px 20px #454a51;
+  border-radius: 1rem;
+  background: linear-gradient(to right top, #34393e, #2c3034);
 }
 .form__label {
   font-size: 2rem;
@@ -116,7 +120,7 @@ html {
 body {
   /* box sizing property not inherited automatically, so we set all selectors to inherit this declared value  */
   box-sizing: border-box;
-  color: #e7e7e7;
+  color: #dbdbdb;
   background-color: #31353a;
   overflow-y: hidden;
 }
@@ -185,10 +189,10 @@ body {
 }
 .cards-article__btn--next {
   bottom: -45%;
-  background: #8bbabb;
+  background: #296866;
 }
 .cards-article__btn--next:hover {
-  background-color: #6f9596;
+  background: rgba(41, 104, 102, 0.737254902);
 }
 .cards-article__btn--cancel {
   bottom: -20%;
@@ -196,7 +200,7 @@ body {
   box-shadow: 17px 17px 27px #292c30, -17px -17px 27px #393e44;
 }
 .cards-article__btn--cancel:hover {
-  background-color: rgba(58, 58, 58, 0.7411764706);
+  background: #393e44;
 }
 .cards-article .card {
   perspective: 200rem;
@@ -235,7 +239,8 @@ body {
 }
 .cards-article .card__side--back {
   color: #e7e7e7;
-  background: linear-gradient(to right bottom, #34b3f1, #103648);
+  background: #33393e;
+  box-shadow: inset 10px 10px 25px #262b2f, inset -10px -10px 25px #40474e;
   transform: rotateY(180deg);
 }
 .cards-article .card__text {
@@ -249,6 +254,9 @@ body {
   font-size: 3.2rem;
   --ionicon-stroke-width: 12px;
   cursor: pointer;
+}
+.cards-article .card__icon--front:hover {
+  color: rgba(238, 80, 17, 0.6666666667);
 }
 .cards-article .card__icon--back {
   --ionicon-stroke-width: 12px;
@@ -268,7 +276,7 @@ body {
   display: inline-block;
   border: none;
   border-radius: 100px;
-  background: linear-gradient(105deg, rgba(241, 84, 18, 0.5), #f15412);
+  background: radial-gradient(#ee5011, #c02b09);
   padding: 1rem 2rem;
   transition: all 0.3s ease;
   cursor: pointer;

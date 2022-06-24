@@ -30,14 +30,20 @@ const showWord = () => {
   cardTextBack.innerText = dataArr[randNum][1];
 };
 input.addEventListener('change', function () {
+  const wordsNum = +prompt(
+    'Please enter how many word you want to remember today?'
+  );
+
   const filename = this.value.split('\\').at(-1);
   if (!filename) return;
   displayFile.insertAdjacentText('afterbegin', `Uploaded file: ${filename}\n`);
   const [file] = input.files;
   Papa.parse(file, {
     dynamicTyping: true,
+    preview: wordsNum,
     complete: function (results) {
-      dataArr = results.data;
+      dataArr = results.data.map(wordArr => wordArr.splice(2, 2));
+      console.log(dataArr);
       formCont.classList.add('hidden');
       cardArt.classList.remove('hidden');
       showWord();
@@ -66,8 +72,6 @@ nextBtn.addEventListener('click', function () {
 });
 
 cancelBtn.addEventListener('click', function () {
-  // dataArr.splice(index, 1);
-  // console.log(index, dataArr);
   console.log(dataArr, randNum);
   if (dataArr.length > 0) {
     dataArr.splice(randNum, 1);

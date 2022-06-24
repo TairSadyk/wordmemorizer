@@ -13,7 +13,7 @@ html {
 body {
   /* box sizing property not inherited automatically, so we set all selectors to inherit this declared value  */
   box-sizing: border-box;
-  color: $color-light-grey-1;
+  color: #dbdbdb;
   background-color: $color-dark-grey-1;
   overflow-y: hidden;
 }
