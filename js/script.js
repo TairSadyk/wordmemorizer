@@ -45,6 +45,21 @@ const showWord = () => {
 ////////////////////////////////////////////////
 //////////////////Event listeners///////////////
 ////////////////////////////////////////////////
+window.addEventListener('load', function () {
+  const storageData = sessionStorage.getItem('wordsData');
+  const storageRemeberedWords = sessionStorage.getItem('rememberedWords');
+  if (!storageData) return;
+  dataArr = JSON.parse(storageData);
+  formCont.classList.add('hidden');
+  cardArt.classList.remove('hidden');
+  showWord();
+
+  const html = JSON.parse(storageRemeberedWords).map(word => {
+    return `<li>${word[0]} - ${word[1]}</li>`;
+  });
+  console.log(html);
+  rememberedWordsList.insertAdjacentHTML('afterbegin', html.join(''));
+});
 input.addEventListener('change', function () {
   // const wordsNum = +prompt(
   //   'Please enter how many word you want to remember today?'
@@ -112,4 +127,10 @@ rememberedWordsBtn.addEventListener('click', function (e) {
     : (rememberedWordsBtn.innerHTML = '🗄');
   rememberedWordsCont.classList.toggle('hidden');
   rememberedWordsCont.classList.toggle('slide-in');
+});
+
+//makes sure if page reloads data is not lost
+window.addEventListener('beforeunload', () => {
+  sessionStorage.setItem('wordsData', JSON.stringify(dataArr));
+  sessionStorage.setItem('rememberedWords', JSON.stringify(rememberedWords));
 });
