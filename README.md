@@ -1,4 +1,4 @@
-## Word Memorizer Application
+## Words Memorizer Application
 
 The application transforms [Google Translate's](https://translate.google.com/saved) saved words into flipping cards.
 ![project preview] (project-preview.gif)
@@ -6,7 +6,7 @@ The application transforms [Google Translate's](https://translate.google.com/sav
 ## How To Use
 
 1. Import your saved words from Google Translate Saved tab to Google Sheets (Only available on the Desktop version).
-2. Download Google Sheets file as CSV (File -> Download -> Comma Separated Values (.csv))
+2. Download Google Sheets file as CSV (File -> Download -> Comma Separated Values)
 3. Upload CSV file to app website.
 
 ## Technologies
@@ -24,6 +24,7 @@ Project is created with:
 
 ## TODO
 
+- Add drag and drop
 - Add leave session functionality to export an updated CSV file without remembered words.
 - Use Meriam-Webster API to add words definitions, phonetics and pronunciation.
 - User sign up and login.

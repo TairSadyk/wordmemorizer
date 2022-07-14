@@ -1,7 +1,7 @@
 {
   "name": "word-memorizer",
   "version": "1.0.0",
-  "description": "Flash cards to memorize new english words",
+  "description": "Flash cards to memorize new words",
   "main": "index.js",
   "scripts": {
     "devserver": "live-server",
