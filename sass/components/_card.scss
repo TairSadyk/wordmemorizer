@@ -2,22 +2,26 @@
   position: relative;
   display: flex;
   justify-content: center;
+  &__btn-cont {
+    position: relative;
+    width: 3.5rem;
+    height: 3.5rem;
+  }
   &__btn {
     text-decoration: none;
     position: absolute;
     right: 25%;
     padding: 1.5rem;
-    color: #e7e7e7;
-    font-size: 1.6rem;
+    color: $color-light-grey-1;
+    font-size: $font-size-default;
     font-family: inherit;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 400;
+    letter-spacing: $letter-spacing-btn;
+    font-weight: $font-weight-nm;
     border: none;
-    border-radius: 5rem;
+    border-radius: $border-radius-btn;
     cursor: pointer;
-    // box-shadow: 0 1rem 3rem rgba(black, 0.15);
-    transition: all 0.3s ease;
+    transition: $transition-sm;
     line-height: 0;
 
     &:active {
@@ -25,17 +29,17 @@
     }
     &--next {
       bottom: -45%;
-      background: #296866;
+      background: $color-green;
       &:hover {
-        background: #296866bc;
+        background: rgba($color-green, 0.8);
       }
     }
     &--cancel {
       bottom: -20%;
-      background: linear-gradient(145deg, #2c3034, #34393e);
+      background: $linear-gradient-dark;
       box-shadow: 17px 17px 27px #292c30, -17px -17px 27px #393e44;
       &:hover {
-        background: #393e44;
+        background: $color-dark-grey-3;
       }
     }
     &--remembered-words {
@@ -50,10 +54,10 @@
     position: absolute;
     right: 3rem;
     top: 6rem;
-    border-radius: 8px;
-    background: linear-gradient(145deg, #2c3034, #34393e);
+    border-radius: $border-radius-cont;
+    background: $linear-gradient-dark;
     box-shadow: 14px 14px 21px #303338, -14px -14px 21px #32373c;
-    transition: all 0.3s ease;
+    transition: $transition-sm;
 
     &__list {
       height: 60vh;
@@ -63,7 +67,7 @@
       margin-top: 3rem;
       padding-right: 3rem;
       li {
-        border-bottom: 0.5px solid #e7e7e7;
+        border-bottom: 0.5px solid $color-light-grey-1;
         padding: 1.5rem 0;
       }
     }
@@ -84,10 +88,9 @@
       top: 0;
       left: 0;
       transform-style: preserve-3d;
-      font-weight: 400;
-      font-size: 2rem;
-      border-radius: 1.2rem;
-      // border: 1px solid #5a5d61;
+      font-weight: $font-weight-nm;
+      font-size: $font-size-card;
+      border-radius: $border-radius-cont;
       box-shadow: 0 1.2rem 4rem rgba(black, 0.15);
       padding: 2rem 4rem;
       display: flex;
@@ -95,7 +98,7 @@
       align-items: center;
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
-      transition: all 0.8s ease;
+      transition: $transition-md;
 
       &--front {
         color: $color-light-grey-1;
@@ -107,34 +110,31 @@
       }
       &--back {
         color: $color-light-grey-1;
-        // background: linear-gradient(to right bottom, #34b3f1, #103648);
-        background: #33393e;
+        background: $color-dark-grey-4;
         box-shadow: inset 10px 10px 25px #262b2f, inset -10px -10px 25px #40474e;
-
-        // background: linear-gradient(105deg, rgba(#f15412, 0.5), #f15512cb);
         transform: rotateY(180deg);
       }
     }
     &__text {
-      font-size: 2.4rem;
-      font-weight: 500;
+      font-size: $font-size-text;
+      font-weight: $font-weight-md;
       text-transform: uppercase;
-      letter-spacing: 3px;
+      letter-spacing: $letter-spacing-text;
       text-align: center;
     }
     &__icon--front {
       color: $color-light-grey-1;
-      font-size: 3.2rem;
+      font-size: $font-size-icon;
       --ionicon-stroke-width: 12px;
       cursor: pointer;
       &:hover {
-        color: #ee5011aa;
+        color: $color-orange;
       }
     }
     &__icon--back {
       --ionicon-stroke-width: 12px;
       color: $color-light-grey-1;
-      font-size: 3.2rem;
+      font-size: $font-size-icon;
       cursor: pointer;
       position: absolute;
       top: 1rem;
@@ -142,24 +142,19 @@
     }
     &__btn {
       color: white;
-      font-size: 1.4rem;
-      font-weight: 500;
+      font-size: $font-size-btn;
+      font-weight: $font-weight-md;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: $letter-spacing-btn;
       display: inline-block;
       border: none;
-      border-radius: 100px;
-      // background: linear-gradient(105deg, rgba(#f15412, 0.5), #f15412);
-      background: radial-gradient(#ee5011, #c02b09);
+      border-radius: $border-radius-btn;
+      background: $radial-gradient-btn;
       padding: 1rem 2rem;
-      transition: all 0.3s ease;
+      transition: $transition-sm;
       cursor: pointer;
       &:hover {
-        background: linear-gradient(
-          105deg,
-          rgba(#f15412, 0.5),
-          rgba(241, 85, 18, 0.7)
-        );
+        background: linear-gradient(105deg, rgba(#f15412, 0.5), #f15512b3);
       }
       &:active {
         transform: translateY(2px);
@@ -176,19 +171,19 @@
     }
   }
 }
-
-::-webkit-scrollbar {
-  width: 1.5em;
-}
-
-::-webkit-scrollbar-track {
-  background: #31353a;
-  box-shadow: inset 6px 6px 5px #2c3034, inset -6px -6px 5px #363a40;
-}
-
-::-webkit-scrollbar-thumb {
-  // border-radius: 8px;
-  height: 10rem;
-  background: linear-gradient(145deg, #34393e, #2c3034);
-  box-shadow: 7px 7px 14px #25282c, -7px -7px 14px #3d4249;
+.words-counter {
+  &__num {
+    position: absolute;
+    top: 55%;
+    left: -25%;
+    z-index: 99;
+    font-size: 0.8rem;
+    width: 36%;
+    height: 36%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: $border-radius-btn;
+    background: linear-gradient(105deg, rgba(#f15412, 0.5), #f15512b3);
+  }
 }

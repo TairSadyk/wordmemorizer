@@ -16,8 +16,13 @@ const nextBtn = document.querySelector('.cards-article__btn--next');
 const cancelBtn = document.querySelector('.cards-article__btn--cancel');
 const rememberedWordsCont = document.querySelector('.remembered-words');
 const rememberedWordsList = document.querySelector('.remembered-words__list');
+
+const wordsCounter = document.querySelector('.words-counter');
 const rememberedWordsBtn = document.querySelector(
   '.cards-article__btn--remembered-words'
+);
+const rememberedWordsBtnCont = document.querySelector(
+  '.cards-article__btn-cont'
 );
 let dataArr;
 let randNum;
@@ -50,15 +55,18 @@ window.addEventListener('load', function () {
   const storageRemeberedWords = sessionStorage.getItem('rememberedWords');
   if (!storageData) return;
   dataArr = JSON.parse(storageData);
+  rememberedWords = JSON.parse(storageRemeberedWords);
   formCont.classList.add('hidden');
   cardArt.classList.remove('hidden');
   showWord();
 
-  const html = JSON.parse(storageRemeberedWords).map(word => {
+  const html = rememberedWords.map(word => {
     return `<li>${word[0]} - ${word[1]}</li>`;
   });
-  console.log(html);
+
   rememberedWordsList.insertAdjacentHTML('afterbegin', html.join(''));
+  if (rememberedWords.length > 0)
+    wordsCounter.innerHTML = `<span class="words-counter__num">${rememberedWords.length}</span>`;
 });
 input.addEventListener('change', function () {
   // const wordsNum = +prompt(
@@ -106,13 +114,14 @@ nextBtn.addEventListener('click', function () {
 });
 
 cancelBtn.addEventListener('click', function () {
-  console.log(randNum);
   if (dataArr.length > 0) {
     rememberedWords.push(dataArr[randNum]);
     const html = `<li>${dataArr[randNum][0]} - ${dataArr[randNum][1]}</li>`;
     dataArr.splice(randNum, 1);
     rememberedWordsList.insertAdjacentHTML('afterbegin', html);
+    wordsCounter.innerHTML = `<span class="words-counter__num">${rememberedWords.length}</span>`;
   }
+
   card.classList.add('shake-animation');
   setTimeout(() => {
     card.classList.remove('shake-animation');

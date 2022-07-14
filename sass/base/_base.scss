@@ -17,3 +17,19 @@ body {
   background-color: $color-dark-grey-1;
   overflow-y: hidden;
 }
+
+::-webkit-scrollbar {
+  width: 1.5em;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-dark-grey-1;
+  box-shadow: inset 6px 6px 5px #2c3034, inset -6px -6px 5px #363a40;
+}
+
+::-webkit-scrollbar-thumb {
+  // border-radius: 8px;
+  height: 10rem;
+  background: linear-gradient(145deg, #34393e, #2c3034);
+  box-shadow: 7px 7px 14px #25282c, -7px -7px 14px #3d4249;
+}

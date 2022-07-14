@@ -5,13 +5,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
-  padding: 3rem 5rem;
+  padding: 5rem 6rem;
   box-shadow: inset 5px 5px 20px #1d2023, inset -5px -5px 20px #454a51;
-  border-radius: 1rem;
+  border-radius: $border-radius-cont;
   background: linear-gradient(to right top, #34393e, #2c3034);
   &__label {
-    font-size: 2rem;
+    font-size: $font-size-card;
     color: $color-dark-grey-2;
     // cursor: pointer;
   }
@@ -52,13 +51,13 @@
   }
   &__button {
     color: $color-light-grey-1;
-    font-size: 1.4rem;
-    font-weight: 500;
+    font-size: $font-size-btn;
+    font-weight: $font-weight-md;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: $letter-spacing-btn;
     display: inline-block;
     border: none;
-    border-radius: 100px;
+    border-radius: $border-radius-btn;
     background: linear-gradient(to right, rgba(#f15412, 0.5), #f15412);
     padding: 2rem 3rem;
     cursor: pointer;
