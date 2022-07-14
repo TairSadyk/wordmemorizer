@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   &__btn {
+    text-decoration: none;
     position: absolute;
     right: 25%;
     padding: 1.5rem;
@@ -35,6 +36,35 @@
       box-shadow: 17px 17px 27px #292c30, -17px -17px 27px #393e44;
       &:hover {
         background: #393e44;
+      }
+    }
+    &--remembered-words {
+      right: 1%;
+      top: 5%;
+    }
+  }
+
+  .remembered-words {
+    display: block;
+    padding: 6rem 3rem;
+    position: absolute;
+    right: 3rem;
+    top: 6rem;
+    border-radius: 8px;
+    background: linear-gradient(145deg, #2c3034, #34393e);
+    box-shadow: 14px 14px 21px #303338, -14px -14px 21px #32373c;
+    transition: all 0.3s ease;
+
+    &__list {
+      height: 60vh;
+      width: 20rem;
+      overflow-y: auto;
+      list-style: none;
+      margin-top: 3rem;
+      padding-right: 3rem;
+      li {
+        border-bottom: 0.5px solid #e7e7e7;
+        padding: 1.5rem 0;
       }
     }
   }
@@ -90,6 +120,7 @@
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 3px;
+      text-align: center;
     }
     &__icon--front {
       color: $color-light-grey-1;
@@ -144,4 +175,20 @@
       }
     }
   }
+}
+
+::-webkit-scrollbar {
+  width: 1.5em;
+}
+
+::-webkit-scrollbar-track {
+  background: #31353a;
+  box-shadow: inset 6px 6px 5px #2c3034, inset -6px -6px 5px #363a40;
+}
+
+::-webkit-scrollbar-thumb {
+  // border-radius: 8px;
+  height: 10rem;
+  background: linear-gradient(145deg, #34393e, #2c3034);
+  box-shadow: 7px 7px 14px #25282c, -7px -7px 14px #3d4249;
 }

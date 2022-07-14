@@ -4,6 +4,9 @@
 .slide-out {
   animation: slide-out 0.7s !important;
 }
+.slide-in {
+  animation: slide-in 0.7s !important;
+}
 
 @keyframes card-shake {
   0% {
@@ -35,5 +38,15 @@
   100% {
     opacity: 0;
     transform: translateX(100%);
+  }
+}
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

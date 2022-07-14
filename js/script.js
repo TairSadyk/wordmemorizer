@@ -1,5 +1,5 @@
 'use strict';
-
+//select HTML elements
 const displayFile = document.querySelector('#display-file');
 const input = document.querySelector('.form__input');
 const formCont = document.querySelector('.form-container');
@@ -14,13 +14,25 @@ const cardTextBack = document.querySelector('.card__text--back');
 const formBtn = document.querySelector('.card__btn');
 const nextBtn = document.querySelector('.cards-article__btn--next');
 const cancelBtn = document.querySelector('.cards-article__btn--cancel');
+const rememberedWordsCont = document.querySelector('.remembered-words');
+const rememberedWordsList = document.querySelector('.remembered-words__list');
+const rememberedWordsBtn = document.querySelector(
+  '.cards-article__btn--remembered-words'
+);
 let dataArr;
 let randNum;
+let rememberedWords = [];
+const totalWords = 333;
+let timer = 0;
+//initialize web speech API
 let speech = new SpeechSynthesisUtterance();
+//function to generate random number based on the array length
 const genRanNum = l => Math.floor(Math.random() * l);
 const showWord = () => {
   if (dataArr.length === 0) {
-    alert('You remembered all new words!!!');
+    alert(
+      `Congradulations!!! New words list is empty, your stats: ${totalWords} words remembered, time spent:${timer} spent on learing :)`
+    );
     return;
   }
   randNum = genRanNum(dataArr.length);
@@ -29,28 +41,35 @@ const showWord = () => {
   speech.text = engWord;
   cardTextBack.innerText = dataArr[randNum][1];
 };
+
+////////////////////////////////////////////////
+//////////////////Event listeners///////////////
+////////////////////////////////////////////////
 input.addEventListener('change', function () {
-  const wordsNum = +prompt(
-    'Please enter how many word you want to remember today?'
-  );
+  // const wordsNum = +prompt(
+  //   'Please enter how many word you want to remember today?'
+  // );
 
   const filename = this.value.split('\\').at(-1);
   if (!filename) return;
-  displayFile.insertAdjacentText('afterbegin', `Uploaded file: ${filename}\n`);
+  // displayFile.insertAdjacentText('afterbegin', `Uploaded file: ${filename}\n`);
   const [file] = input.files;
   Papa.parse(file, {
     dynamicTyping: true,
-    preview: wordsNum,
+    // preview: wordsNum,
     complete: function (results) {
       dataArr = results.data.map(wordArr => wordArr.splice(2, 2));
-      console.log(dataArr);
+      dataArr = dataArr.map(word => [
+        word[0].toLowerCase(),
+        word[1].toLowerCase(),
+      ]);
+
       formCont.classList.add('hidden');
       cardArt.classList.remove('hidden');
       showWord();
     },
   });
 });
-
 formBtn.addEventListener('click', function () {
   cardFront.classList.add('rotate');
   cardBack.classList.add('rotate');
@@ -72,13 +91,25 @@ nextBtn.addEventListener('click', function () {
 });
 
 cancelBtn.addEventListener('click', function () {
-  console.log(dataArr, randNum);
+  console.log(randNum);
   if (dataArr.length > 0) {
+    rememberedWords.push(dataArr[randNum]);
+    const html = `<li>${dataArr[randNum][0]} - ${dataArr[randNum][1]}</li>`;
     dataArr.splice(randNum, 1);
+    rememberedWordsList.insertAdjacentHTML('afterbegin', html);
   }
   card.classList.add('shake-animation');
   setTimeout(() => {
     card.classList.remove('shake-animation');
     showWord();
   }, 500);
+});
+
+rememberedWordsBtn.addEventListener('click', function (e) {
+  e.preventDefault();
+  rememberedWordsCont.classList.contains('hidden')
+    ? (rememberedWordsBtn.innerHTML = '🗃')
+    : (rememberedWordsBtn.innerHTML = '🗄');
+  rememberedWordsCont.classList.toggle('hidden');
+  rememberedWordsCont.classList.toggle('slide-in');
 });

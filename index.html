@@ -10,9 +10,7 @@
   <body>
     <main>
       <div class="form-container">
-        <h1 class="primary-heading u-margin-bottom-large">
-          Memorize new words
-        </h1>
+        <h1 class="primary-heading u-margin-bottom-large">Learn New Words</h1>
         <div class="form">
           <label for="data" class="form__label">
             <a class="form__link-wrap">
@@ -51,6 +49,18 @@
         <button class="cards-article__btn cards-article__btn--cancel">
           <ion-icon name="close-outline"></ion-icon>
         </button>
+        <!-- <a href="" class="cards-article__btn cards-article__btn--end-session"
+          >Enough for Today</a
+        > -->
+        <a
+          href=""
+          class="cards-article__btn cards-article__btn--remembered-words"
+          >🗄</a
+        >
+        <div class="remembered-words hidden">
+          <h3 class="remembered-words__heading">Word I remembered</h3>
+          <ul class="remembered-words__list"></ul>
+        </div>
       </article>
     </main>
     <script

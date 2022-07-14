@@ -23,6 +23,7 @@
   opacity: 0 !important;
   visibility: hidden !important;
   height: 0 !important;
+  pointer-events: none !important;
 }
 
 .form-container {
@@ -133,6 +134,10 @@ body {
   animation: slide-out 0.7s !important;
 }
 
+.slide-in {
+  animation: slide-in 0.7s !important;
+}
+
 @keyframes card-shake {
   0% {
     transform: rotate(0);
@@ -163,12 +168,23 @@ body {
     transform: translateX(100%);
   }
 }
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 .cards-article {
   position: relative;
   display: flex;
   justify-content: center;
 }
 .cards-article__btn {
+  text-decoration: none;
   position: absolute;
   right: 25%;
   padding: 1.5rem;
@@ -201,6 +217,33 @@ body {
 }
 .cards-article__btn--cancel:hover {
   background: #393e44;
+}
+.cards-article__btn--remembered-words {
+  right: 1%;
+  top: 5%;
+}
+.cards-article .remembered-words {
+  display: block;
+  padding: 6rem 3rem;
+  position: absolute;
+  right: 3rem;
+  top: 6rem;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #2c3034, #34393e);
+  box-shadow: 14px 14px 21px #303338, -14px -14px 21px #32373c;
+  transition: all 0.3s ease;
+}
+.cards-article .remembered-words__list {
+  height: 60vh;
+  width: 20rem;
+  overflow-y: auto;
+  list-style: none;
+  margin-top: 3rem;
+  padding-right: 3rem;
+}
+.cards-article .remembered-words__list li {
+  border-bottom: 0.5px solid #e7e7e7;
+  padding: 1.5rem 0;
 }
 .cards-article .card {
   perspective: 200rem;
@@ -248,6 +291,7 @@ body {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 3px;
+  text-align: center;
 }
 .cards-article .card__icon--front {
   color: #e7e7e7;
@@ -295,6 +339,21 @@ body {
 }
 .cards-article .card__side--back.rotate {
   transform: rotateY(0deg);
+}
+
+::-webkit-scrollbar {
+  width: 1.5em;
+}
+
+::-webkit-scrollbar-track {
+  background: #31353a;
+  box-shadow: inset 6px 6px 5px #2c3034, inset -6px -6px 5px #363a40;
+}
+
+::-webkit-scrollbar-thumb {
+  height: 10rem;
+  background: linear-gradient(145deg, #34393e, #2c3034);
+  box-shadow: 7px 7px 14px #25282c, -7px -7px 14px #3d4249;
 }
 
 /*# sourceMappingURL=style.css.map */
