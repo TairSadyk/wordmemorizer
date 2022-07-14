@@ -1,6 +1,9 @@
 ## Words Memorizer Application
 
 The application transforms [Google Translate's](https://translate.google.com/saved) saved words into flipping cards.
+
+## Preview
+
 ![project preview](project-preview.gif)
 
 ## How To Use
